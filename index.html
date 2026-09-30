@@ -1,119 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <title>My Portofolio </title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arif Setyo Wibowo | Web Developer &amp; Junior QA</title>
+<meta name="description" content="Portofolio Arif Setyo Wibowo, lulusan S1 Informatika UPN Veteran Jawa Timur. Web Developer (PHP, Laravel, CodeIgniter) dengan minat di Quality Assurance.">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--text:#14171f;--muted:#5b6474;--line:#e3e6ec;--accent:#4f46e5;--accent2:#0ea5a4;--chip:#eef0ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;--card:#171b23;--text:#e9ecf2;--muted:#9aa4b5;--line:#262c38;--accent:#8b8cff;--accent2:#2dd4bf;--chip:#20243a}}
+:root[data-theme="dark"]{--bg:#0e1116;--card:#171b23;--text:#e9ecf2;--muted:#9aa4b5;--line:#262c38;--accent:#8b8cff;--accent2:#2dd4bf;--chip:#20243a}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-top:env(safe-area-inset-top,0)}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav b{font-size:17px;color:var(--text)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px}
+nav ul a{color:var(--muted)}nav ul a:hover{color:var(--accent)}
+section{padding:64px 0}
+h2{font-size:26px;margin:0 0 28px;letter-spacing:-.01em}
+h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin-top:8px}
+.hero{padding:72px 0 48px}
+.hero .wrap{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--muted)}
+.badge i{width:8px;height:8px;border-radius:50%;background:#22c55e}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.1;margin:16px 0 8px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:19px;color:var(--muted);margin:0 0 16px}
+.lead{max-width:56ch;color:var(--muted);margin:0 0 24px}
+.btn{display:inline-block;padding:10px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--accent);margin:0 8px 8px 0}
+.btn.p{background:var(--accent);color:#fff}.btn.s{color:var(--accent);background:transparent}
+:root:not([data-theme="dark"]) .btn.p{color:#fff}
+.photo{width:220px;height:220px;border-radius:28px;object-fit:cover;border:1px solid var(--line);background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:64px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.stat b{display:block;font-size:26px;color:var(--accent)}.stat span{font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pad{padding:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12.5px;padding:3px 10px;border-radius:99px;background:var(--chip);color:var(--accent)}
+.card h3{margin:0 0 4px;font-size:18px}.muted{color:var(--muted);font-size:14.5px}
+.thumb{height:140px;background:linear-gradient(135deg,var(--accent),var(--accent2));background-size:cover;background-position:center}
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 26px 24px}
+.job::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.job h3{margin:0;font-size:17px}.job .muted{margin:2px 0 8px}
+.job ul{margin:0;padding-left:18px}.job li{margin:3px 0}
+.skills h3{font-size:15px;margin:0 0 2px;color:var(--muted);font-weight:600}
+.cv{text-align:center}.cv p{color:var(--muted);max-width:52ch;margin:0 auto 20px}
+footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:var(--muted);font-size:14px}
+footer a{margin:0 10px}
+@media (max-width:800px){
+ nav ul{display:none}
+ .hero .wrap{grid-template-columns:1fr}.photo{order:-1;width:120px;height:120px;border-radius:22px;font-size:38px}
+ .g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}.stat b{font-size:20px}
+ section{padding:48px 0}
+}
+</style>
 </head>
+<body>
+<nav><div class="wrap"><b>Arif Setyo Wibowo</b>
+<ul><li><a href="#tentang">Tentang</a></li><li><a href="#keahlian">Keahlian</a></li><li><a href="#pengalaman">Pengalaman</a></li><li><a href="#proyek">Proyek</a></li><li><a href="#kontak">Kontak</a></li></ul></div></nav>
 
-<body class="onepage">
-    <div class="content-wrapper">
-        <section id="home">
-            <div class="wrapper bg-gray">
-                <div class="container pt-10 pt-md-14 pb-12 pb-md-12 text-center">
-                    <!-- /.row -->
-                    <div class="row text-center mt-10">
-                        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                            <img class="rounded-circle w-22 mx-auto mb-4" src="./assets/img/foto.jpg" srcset="./assets/img/avatars/t1@2x.jpg 2x" alt="" />
-                            <h1 class="mb-1 display-1">Arif Setyo Wibowo</h1>
-                            <p class="mb-2">Web Developer</p>
-                            <nav class="nav social justify-content-center text-center mb-0">
-                                <a href="github.com/arif-setyo-wibowo" target="_blank"><i class="uil uil-github"></i></a>
-                                <a href="instagram.com/arifsw__" target="_blank"><i class="uil uil-instagram"></i></a>
-                                <a href="linkedin.com/in/arif-setyo-wibowo-257014236/" target="_blank"><i class="uil uil-linkedin "></i></a>
-                            </nav>
-                            <p class="lead fs-22">Saya mahasiswa semester 5 di Universitas Pembangunan Nasional "Veteran" Jawa Timur yang memiliki ketertarikan yang mendalam dalam pemrograman web, backend, dan mobile. Memiliki pemahaman dalam pemrograman web, khususnya pada
-                                bahasa pemrograman PHP dengan menggunakan framework Codeigniter dan Laravel. </p>
-                            <!-- /.social -->
-                        </div>
-                        <!-- /column -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container -->
-            </div>
-            <!-- /.wrapper -->
-        </section>
-        <!-- /section -->
-        <section id="services">
-            <div class="wrapper bg-light">
-                <div class="container py-8 py-md-13">
-                    <div class="row">
-                        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mx-auto text-center">
-                            <h3 class="display-4 mb-10 px-xl-10 px-xxl-15">Curriculum Vitae</h3>
-                            <a href="ARIF-SETYO-WIBOWO-CV.pdf" target="_blank" class="btn btn-success mt-2">CV Arif Setyo Wibowo</a>
-                        </div>
-                        <!-- /column -->
-                    </div>
-                </div>
-                <!-- /.container -->
-            </div>
-            <!-- /.wrapper -->
-        </section>
-        <section id="process">
-            <div class="wrapper bg-gray">
-                <div class="container py-6 py-md-6">
-                    <div class="row">
-                        <div class="col-lg-11 col-xxl-10 mx-auto text-center">
-                            <h3 class="display-4 mb-10">Project Portofolio</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="project item col-md-6 col-xl-4 product mb-5 ">
-                            <div class="card shadow-lg">
-                                <figure class="card-img-top itooltip itooltip-purple" title="Lihat Project">
-                                    <a href="tradeid.html" target="_blank"> <img src="./assets/img/tradeid.png" alt=""></a>
-                                </figure>
-                                <div class="card-body p-7">
-                                    <div class="post-header">
-                                        <div class="post-category text-line mb-2 text-purple">Codeigniter 3</div>
-                                        <h3 class="mb-0">TradeId</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project item col-md-6 col-xl-4 product mb-5">
-                            <div class="card shadow-lg">
-                                <figure class="card-img-top itooltip itooltip-purple" title="Lihat Project">
-                                    <a href="toko-komputer.html" target="_blank"> <img src="./assets/img/toko-komputer.png" alt=""></a>
-                                </figure>
-                                <div class="card-body p-7">
-                                    <div class="post-header">
-                                        <div class="post-category text-line mb-2 text-purple">Laravel</div>
-                                        <h3 class="mb-0">Toko Komputer Analyst</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project item col-md-6 col-xl-4 product mb-5">
-                            <div class="card shadow-lg">
-                                <figure class="card-img-top itooltip itooltip-purple" title="Lihat Project">
-                                    <a href="itcamp.html" target="_blank"> <img src="./assets/img/itcamp.png" alt=""></a>
-                                </figure>
-                                <div class="card-body p-7">
-                                    <div class="post-header">
-                                        <div class="post-category text-line mb-2 text-purple">Laravel</div>
-                                        <h3 class="mb-0">ITCamp</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+<header class="hero" id="tentang"><div class="wrap">
+<div>
+<span class="badge"><i></i>Terbuka untuk peluang kerja</span>
+<h1>Halo, saya <span>Arif</span></h1>
+<p class="role">Web Developer</p>
+<p class="lead">Lulusan S1 Informatika UPN "Veteran" Jawa Timur. Saya membangun aplikasi web dengan PHP, Laravel, dan CodeIgniter, dari analisis kebutuhan sampai deployment.</p>
+<a class="btn p" href="#proyek">Lihat Proyek</a><a class="btn s" href="#cv">Unduh CV</a>
+</div>
+<div class="photo" id="ph">AW</div>
+</div>
+<div class="wrap" style="display:block"><div class="stats">
+<div class="stat"><b>3,83</b><span>IPK S1 Informatika</span></div>
+<div class="stat"><b>10+</b><span>Proyek web untuk klien</span></div>
+<div class="stat"><b>Juli 2026</b><span>Tanggal lulus</span></div>
+</div></div></header>
+<script>
+(function(){var i=new Image();i.onload=function(){var p=document.getElementById('ph');p.textContent='';p.style.background='url(./assets/img/foto.jpg) center/cover'};i.src='./assets/img/foto.jpg'})();
+</script>
 
-    <footer class="bg-dark">
-        <div class="container p-3">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-white text-center ">© 2023 Arif Setyo Wibowo.
-                </div>
-            </div>
-        </div>
-    </footer>
+<section id="keahlian"><div class="wrap"><h2>Keahlian</h2>
+<div class="grid g3 skills">
+<div class="card pad"><h3>Pengembangan Web</h3><div class="chips"><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">CodeIgniter</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Java</span></div></div>
+<div class="card pad"><h3>Database &amp; Tools</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">VS Code</span></div></div>
+<div class="card pad"><h3>QA &amp; IT Support</h3><div class="chips"><span class="chip">Manual Testing</span><span class="chip">Test Case Design</span><span class="chip">Postman</span><span class="chip">Troubleshooting</span><span class="chip">LAN &amp; TCP/IP</span></div></div>
+</div></div></section>
 
+<section id="pengalaman"><div class="wrap"><h2>Pengalaman</h2>
+<div class="tl">
+<div class="job"><h3>Web Developer / IT Consultant (Freelance)</h3><div class="muted">Freelance, Sidoarjo · Desember 2024 – sekarang</div>
+<ul><li>Mengerjakan 10+ proyek web dan e-commerce (Laravel, CodeIgniter) untuk klien.</li><li>Menangani siklus proyek: kebutuhan klien, desain database, fitur, hingga deployment.</li><li>Menguji dan memperbaiki bug sebelum aplikasi diserahkan.</li></ul></div>
+<div class="job"><h3>IT Support &amp; Web Developer (Magang)</h3><div class="muted">RS Siti Khodijah, Sidoarjo · Februari – Juni 2024</div>
+<ul><li>Merancang dan mengembangkan sistem ERP manajemen logistik rumah sakit.</li><li>Troubleshooting hardware, software, dan jaringan bagi staf.</li><li>Membantu membangun ulang SIMRS rumah sakit.</li></ul></div>
+<div class="job"><h3>Fullstack Developer (Magang / PKL)</h3><div class="muted">CV. IT Brain Indonesia, Sidoarjo · Maret – Juli 2019</div>
+<ul><li>Membuat aplikasi Android dengan Java dan website dengan Laravel serta CodeIgniter 4.</li><li>Memelihara aplikasi yang sudah ada.</li></ul></div>
+</div>
+<p class="muted">Pendidikan: S1 Informatika UPN "Veteran" Jawa Timur (2021–2026) · SMKN 2 Buduran, RPL (2018–2021). Sertifikasi: Junior Web Programmer BNSP (Desember 2024).</p>
+</div></section>
+
+<section id="proyek"><div class="wrap"><h2>Proyek</h2>
+<div class="grid g3">
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/vsla-monitor.png),linear-gradient(135deg,var(--accent),var(--accent2));background-position:top left"></div><div class="pad">
+<h3>V-SLA Monitor</h3><p class="muted">Sistem tiket dan monitoring SLA vendor pengembang aplikasi. Pengawas memantau tiket masuk, menyetujui atau menolak tiket yang diselesaikan vendor, dan menilai kinerja vendor. Dashboard menampilkan peringatan tiket critical yang belum ditugaskan, ranking vendor, laporan kinerja, dan log aktivitas tiket.</p>
+<div class="chips"><span class="chip">PHP Native</span><span class="chip">JavaScript</span><span class="chip">CSS</span></div>
+<p class="muted" style="margin:14px 0 0">Proyek klien · kode privat</p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/smart-ppa.png),linear-gradient(135deg,var(--accent),var(--accent2));background-position:top left"></div><div class="pad">
+<h3>Smart PPA</h3><p class="muted">Sistem penilaian kinerja vendor untuk Pertamina Lubricants. Penilai mengisi skor Quality, Delivery, dan Service per proyek, rata-rata dihitung otomatis, dan hasil dapat difilter serta diekspor. Dilengkapi master data kategori, divisi, proyek, calon vendor, dan pengaturan hak akses.</p>
+<div class="chips"><span class="chip">PHP Native</span><span class="chip">JavaScript</span><span class="chip">CSS</span></div>
+<p class="muted" style="margin:14px 0 0"><a href="https://github.com/arif-setyo-wibowo/smartppa" target="_blank" rel="smartppa">Lihat di GitHub →</a></p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/trendy.png),linear-gradient(135deg,var(--accent),var(--accent2));background-position:top left"></div><div class="pad">
+<h3>Trendy Spring Bed</h3><p class="muted">Marketplace untuk perusahaan kasur Trendy. Pelanggan dapat mencari produk, menjelajahi kategori (kasur, divan, mattress topper, produk bayi, dan lainnya), masuk atau mendaftar, serta berkomunikasi melalui fitur chat.</p>
+<div class="chips"><span class="chip">Laravel</span><span class="chip">Fitur Chat</span><span class="chip">Payment Gateway Midtrans</span><span class="chip">Login Google</span></div>
+<p class="muted" style="margin:14px 0 0">Proyek klien · kode privat</p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/e-logistik.png),linear-gradient(135deg,var(--accent),var(--accent2));background-position:top left"></div><div class="pad">
+<h3>E-Logistik Rumah Sakit</h3><p class="muted">Sistem manajemen logistik rumah sakit. Mencakup purchase order (PO), penerimaan barang (receive item) dengan status dan jatuh tempo, perencanaan, stok opname, laporan, dan closing. Dilengkapi master data kategori, barang, pemasok, dan user per unit, serta export data dan mode gelap.</p>
+<div class="chips"><span class="chip">Laravel</span><span class="chip">Export Data</span></div>
+<p class="muted" style="margin:14px 0 0">Proyek klien · kode privat</p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/gideonmogo.png),linear-gradient(135deg,var(--accent),var(--accent2));background-position:top left"></div><div class="pad">
+<h3>Gideonmogo</h3><p class="muted">Marketplace online untuk produk game. Pengguna dapat mencari item, menjelajahi halaman toko, memasukkan ke keranjang, serta masuk ke akun. Dilengkapi halaman beranda dengan banner, About, dan Contact.</p>
+<div class="chips"><span class="chip">Laravel</span><span class="chip">Marketplace</span></div>
+<p style="margin:14px 0 0"><a href="https://github.com/arif-setyo-wibowo/gideonmogo" target="_blank" rel="noopener">Lihat di GitHub →</a></p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/tradeid.png),linear-gradient(135deg,var(--accent),var(--accent2))"></div><div class="pad">
+<h3>TradeID</h3><p class="muted">Platform promosi UMKM Indonesia ke pasar global, dengan penjelajahan produk yang responsif dan interaktif.</p>
+<div class="chips"><span class="chip">CodeIgniter 3</span><span class="chip">Ajax</span><span class="chip">Bootstrap</span><span class="chip">MySQL</span></div>
+<p style="margin:14px 0 0"><a href="https://github.com/arif-setyo-wibowo/tradeid" target="_blank" rel="noopener">Lihat di GitHub →</a></p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/toko-komputer.png),linear-gradient(135deg,var(--accent),var(--accent2))"></div><div class="pad">
+<h3>Toko Komputer Analyst</h3><p class="muted">Website e-commerce untuk mencari dan membeli produk serta layanan seputar komputer.</p>
+<div class="chips"><span class="chip">Laravel 10</span><span class="chip">Ajax</span><span class="chip">Bootstrap</span><span class="chip">MySQL</span></div>
+<p style="margin:14px 0 0"><a href="https://github.com/arif-setyo-wibowo/toko-komputer" target="_blank" rel="noopener">Lihat di GitHub →</a></p></div></article>
+<article class="card"><div class="thumb" style="background-image:url(./assets/img/itcamp.png),linear-gradient(135deg,var(--accent),var(--accent2))"></div><div class="pad">
+<h3>ITCamp</h3><p class="muted">Platform bootcamp internal mahasiswa Informatika UPN Veteran Jatim, dengan login akun Google.</p>
+<div class="chips"><span class="chip">Laravel 8</span><span class="chip">MySQL</span><span class="chip">jQuery</span><span class="chip">Login Google</span></div>
+<p style="margin:14px 0 0"><a href="https://github.com/arif-setyo-wibowo/itcamp" target="_blank" rel="noopener">Lihat di GitHub →</a></p></div></article>
+</div></div></section>
+
+<section id="cv"><div class="wrap cv"><h2 style="display:inline-block;text-align:left">Curriculum Vitae</h2>
+<p>Pilih versi yang sesuai dengan posisi yang Anda tawarkan.</p>
+<a class="btn p" href="CV_Arif_Setyo_Wibowo_WebDeveloper.pdf" target="_blank" rel="noopener">CV Web Developer</a>
+</div></section>
+
+<footer id="kontak"><div class="wrap">
+<p><a href="mailto:arif13.aw@gmail.com">arif13.aw@gmail.com</a><a href="https://github.com/arif-setyo-wibowo" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/arif-setyo-wibowo-257014236/" target="_blank" rel="noopener">LinkedIn</a><a href="https://instagram.com/arifsw__" target="_blank" rel="noopener">Instagram</a></p>
+<p>&copy; 2026 Arif Setyo Wibowo · Sidoarjo, Indonesia</p></div></footer>
 </body>
-
 </html>
